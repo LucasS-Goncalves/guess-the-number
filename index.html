@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/pgn" href="assets/interrogation.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend : {
+                    colors:{
+                        BackgroundColor: '#7286D3',
+                        SpecialWhite: '#FFF2F2',
+                        DarkBlue: '#19376D',
+                        LightBlue: '#576CBC',
+                        Red: '#D21312',
+                        LightGreen: '#98D8AA'
+                    },
+                    fontFamily: {
+                        SourceCodePro: ['Source Code Pro', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <title>Guess The Number</title>
+</head>
+<body class="min-h-screen font-SourceCodePro bg-BackgroundColor text-SpecialWhite mt-10 flex flex-col text-center items-center">
+
+    <button id="buttonShowModal" class="bg-DarkBlue rounded text-sm self-start p-2 mb-20 ml-6 hover:bg-LightBlue xl:mb-12">How to play</button>
+
+    <h1 class="mx-4 mb-12 text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Guess the number</h1>
+    
+    <dialog id="modal" close class=" w-80 bg-DarkBlue rounded-2xl text-SpecialWhite font-semibold py-2 px-8 md:text-xl md:w-96 md:h-96">
+        <button  id="buttonCloseModal" class=" text-Red text-xl font-bold absolute right-0 mr-4 ">&#x2715</button>
+        <h3 class="my-6 ">You have to allow the use of your microphone to play, once that's done, you just have to say your guess. To help you, the game will tell you if you say a number smaller or bigger than the secret number, just keep saying your guesses until you get it right. Enjoy the game!</h3>
+    </dialog>
+
+    <h3 class="mx-4 text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl">The secret number is between <span id="smallest-number"></span> and <span id="biggest-number"></span></h3>
+    
+    <div id="guess-div" class="my-12 text-3xl lg:text-4xl"></div>
+
+    <script src="app/numberRaffle.js"></script>
+    <script src="app/validatesTheGuess.js"></script>
+    <script src="app/speechRecognition.js"></script>
+    <script src="app/howToPlay.js"></script>
+</body>
+</html>
