@@ -2,12 +2,9 @@ const counterSpan = document.querySelector('#counter');
 
 let counter = 0;
 
-
-
 function validatesTheGuess (guess, secretNumber) {
 
     const guessValid = +guess;
-    console.log(secretNumber)
    
     if (Number.isNaN(guessValid)) {
 
