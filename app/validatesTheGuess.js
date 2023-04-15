@@ -2,11 +2,15 @@ const counterSpan = document.querySelector('#counter');
 
 let counter = 0;
 
+
+
 function validatesTheGuess (guess, secretNumber) {
 
     const guessValid = +guess;
+    console.log(secretNumber)
    
     if (Number.isNaN(guessValid)) {
+
             
         guessDiv.innerHTML = `<h3 class="italic mx-2">I couldn't understand your guess :( </br> Can you say it again?<h3>`
 
