@@ -5,7 +5,6 @@ let counter = 0;
 function validatesTheGuess (guess, secretNumber) {
 
     const guessValid = +guess;
-    console.log(secretNumber)
    
     if (Number.isNaN(guessValid)) {
             
